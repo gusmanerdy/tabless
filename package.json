@@ -1,0 +1,11 @@
+{
+  "name": "tabless",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Kelola tab duplikat dan tab lama, dengan koleksi lokal yang dapat dipulihkan.",
+  "scripts": {
+    "test": "node --test",
+    "preview": "node scripts/preview-server.js"
+  }
+}

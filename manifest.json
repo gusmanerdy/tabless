@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Tabless — Rapikan Tab",
+  "short_name": "Tabless",
+  "version": "0.1.0",
+  "description": "Temukan tab duplikat dan tab lama. Simpan tautannya sebelum menutup, lalu buka kembali kapan saja.",
+  "minimum_chrome_version": "121",
+  "permissions": ["tabs", "storage"],
+  "incognito": "not_allowed",
+  "background": { "service_worker": "worker.js", "type": "module" },
+  "action": { "default_title": "Buka Tabless" },
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+T" },
+      "description": "Buka Tabless"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src 'none'; img-src 'self' data:; style-src 'self'; base-uri 'none'; frame-ancestors 'none'"
+  }
+}

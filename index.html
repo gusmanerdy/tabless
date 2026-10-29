@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Tabless — Ruang untuk fokus</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="6" height="6" rx="1.4"/><rect x="14.5" y="3.5" width="6" height="6" rx="1.4"/><rect x="3.5" y="14.5" width="6" height="6" rx="1.4"/><rect x="14.5" y="14.5" width="6" height="6" rx="1.4"/></symbol>
+      <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10H3Z"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></symbol>
+      <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m-4 4 4-4 4 4M4 16v5h16v-5"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 4-4 7-8 9-4-2-8-5-8-9V6Z"/><path d="m8 12 3 3 5-6"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 3h7v7m0-7L10 14M10 4H4v16h16v-6"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v6m4-6v6"/></symbol>
+      <symbol id="i-edit" viewBox="0 0 24 24"><path d="m15 4 5 5M4 20l5-1L21 7l-5-5L4 14Z"/></symbol>
+      <symbol id="i-tabs" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M7 7V3h10v4M3 12h18"/></symbol>
+    </svg>
+    <aside class="sidebar">
+      <a class="brand" href="index.html" aria-label="Tabless beranda"><span class="brand-icon"><span></span><span></span></span><span>tabless<span class="brand-dot">.</span></span></a>
+      <div class="sidebar-section">RUANG KERJA</div>
+      <nav aria-label="Navigasi utama">
+        <button class="nav-item active" data-view="live" aria-current="page"><svg class="icon"><use href="#i-grid"/></svg><span>Tab terbuka</span><span class="nav-count" id="nav-live-count">0</span></button>
+        <button class="nav-item" data-view="saved"><svg class="icon"><use href="#i-folder"/></svg><span>Koleksi tersimpan</span><span class="nav-count" id="nav-saved-count">0</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="local-card"><span class="local-status"></span><strong>Tersimpan di perangkatmu</strong><p>Tautan tetap milikmu.<br>Tanpa akun, tanpa server.</p></div>
+        <button class="utility-button" id="export-button"><svg class="icon"><use href="#i-download"/></svg>Ekspor cadangan</button>
+        <button class="utility-button" id="import-button"><svg class="icon"><use href="#i-upload"/></svg>Impor cadangan</button>
+        <div class="sidebar-version">TAB LESS. DO MORE.<span>v0.1</span></div>
+      </div>
+    </aside>
+    <main>
+      <div id="preview-banner" class="preview-banner" hidden>Mode pratinjau • Data contoh. Perubahan di sini tidak memengaruhi tab browser.</div>
+      <header class="page-header"><div class="breadcrumb"><span>Ruang kerja</span><span>/</span><strong id="breadcrumb-view">Tab terbuka</strong></div><span class="device-indicator"><span></span>Lokal di perangkat ini</span></header>
+      <section class="hero"><div class="hero-copy"><div class="eyebrow"><span></span>RUANG UNTUK FOKUS</div><h1>Lebih sedikit tab.<br><span>Lebih banyak fokus.</span></h1><p>Rapikan yang menumpuk. Simpan yang penting.<br>Lanjutkan kapan pun kamu siap.</p></div><div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-window window-back"><i></i><i></i><i></i><span></span><span></span></div><div class="art-window window-front"><div class="art-window-bar"><i></i><i></i><i></i></div><div class="art-line long"></div><div class="art-line"></div><div class="art-line short"></div><div class="art-check"><svg class="icon"><use href="#i-check"/></svg></div></div><div class="art-spark spark-one">✦</div><div class="art-spark spark-two">✦</div></div></section>
+      <section class="stats" aria-label="Ringkasan tab"><button class="stat" data-filter="all"><span class="stat-icon teal"><svg class="icon"><use href="#i-tabs"/></svg></span><span><span class="stat-label">Tab terbuka</span><strong id="stat-live">—</strong></span><span class="stat-detail">di semua jendela</span></button><button class="stat" data-filter="duplicates"><span class="stat-icon sand"><svg class="icon"><use href="#i-copy"/></svg></span><span><span class="stat-label">Salinan duplikat</span><strong id="stat-duplicates">—</strong></span><span class="stat-detail">bisa dirapikan</span></button><button class="stat" data-filter="stale"><span class="stat-icon lavender"><svg class="icon"><use href="#i-clock"/></svg></span><span><span class="stat-label">Tab lama</span><strong id="stat-stale">—</strong></span><span class="stat-detail" id="stat-stale-description">tidak dipakai 7 hari</span></button></section>
+      <section class="content-section" aria-labelledby="section-title"><div class="section-heading"><div><h2 id="section-title">Saatnya memberi ruang</h2><p id="section-subtitle">Mulai dari tab yang tidak perlu terbuka dua kali.</p></div><button class="text-button" id="refresh-button">Segarkan <span aria-hidden="true">↻</span></button></div>
+        <div class="content-card"><div class="toolbar"><div class="filter-tabs" role="tablist" aria-label="Jenis tab"><button role="tab" class="filter-tab active" data-filter="duplicates" aria-selected="true">Duplikat<span id="filter-duplicates-count">0</span></button><button role="tab" class="filter-tab" data-filter="stale" aria-selected="false">Tab lama<span id="filter-stale-count">0</span></button><button role="tab" class="filter-tab" data-filter="all" aria-selected="false">Semua tab</button></div><label class="search-field"><svg class="icon"><use href="#i-search"/></svg><input id="search" type="search" placeholder="Cari judul atau situs…" aria-label="Cari judul atau situs" autocomplete="off"/><kbd>/</kbd></label></div>
+          <div class="list-context" id="list-context"><label class="select-all-label"><input id="select-all" type="checkbox"/><span id="selection-label">Pilih semua</span></label><div class="context-right"><label id="stale-setting" hidden>Tidak dipakai selama <select id="stale-days" aria-label="Batas usia tab"><option value="1">1 hari</option><option value="3">3 hari</option><option value="7" selected>7 hari</option><option value="14">14 hari</option><option value="30">30 hari</option></select></label><span id="results-count">Memuat tab…</span></div></div>
+          <div id="error-banner" class="error-banner" role="alert" hidden></div><div id="list" class="tab-list" aria-live="polite"><div class="loading-state"><span class="spinner"></span>Menyiapkan ruangmu…</div></div>
+          <div class="list-footer" id="list-footer"><div><svg class="icon"><use href="#i-shield"/></svg><span id="footer-note">Satu salinan tetap terbuka. Tab aktif, dipin, dan bersuara dilewati.</span></div><button id="archive-button" class="button primary" disabled><span>Simpan & tutup</span><svg class="icon"><use href="#i-arrow"/></svg></button></div>
+        </div>
+      </section>
+      <footer class="page-footer"><span>Sedikit lebih rapi. Sedikit lebih ringan.</span><span>Tabless — dibuat untuk fokus.</span></footer>
+    </main>
+    <input id="import-file" type="file" accept=".json,application/json" hidden/>
+    <dialog id="action-dialog"><form method="dialog" id="dialog-form"><button class="dialog-close icon-button" value="cancel" aria-label="Tutup dialog"><svg class="icon"><use href="#i-close"/></svg></button><span class="dialog-symbol"><svg class="icon"><use href="#i-folder"/></svg></span><h2 id="dialog-title"></h2><p id="dialog-description"></p><label id="dialog-input-label">Nama koleksi<input id="dialog-input" type="text" maxlength="100" autocomplete="off"/></label><div class="dialog-note" id="dialog-note"><svg class="icon"><use href="#i-shield"/></svg><span>Hanya tautan dan judul yang disimpan. Isi formulir dan riwayat halaman tidak ikut disimpan.</span></div><div class="dialog-actions"><button class="button secondary" value="cancel">Batal</button><button class="button primary" id="dialog-confirm" value="confirm">Simpan & tutup</button></div></form></dialog>
+    <div class="toast" id="toast" role="status" hidden><span id="toast-message"></span><button id="toast-action" hidden>Urungkan</button><button id="toast-close" class="icon-button" aria-label="Tutup pemberitahuan"><svg class="icon"><use href="#i-close"/></svg></button></div>
+  </body>
+</html>
